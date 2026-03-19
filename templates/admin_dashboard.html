@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Complaint</th>
+            <th>Anonymous</th>
+        </tr>
+        {% for comp in complaints %}
+        <tr>
+            <td>{{ comp[0] }}</td>
+            <td>{{ comp[1] }}</td>
+            <td>{{ comp[2] }}</td>
+            <td>{{ comp[3] }}</td>
+            <td>{{ 'Yes' if comp[4] else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Back to Form</a>
+</body>
+</html>

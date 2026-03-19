@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anti Ragging Complaint Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Anti-Ragging Complaint Form</h1>
+    <form action="/submit" method="POST">
+        <input type="text" name="name" placeholder="Your Name (Optional)">
+        <br><br>
+        <input type="text" name="location" placeholder="Location" required>
+        <br><br>
+        <textarea name="complaint" placeholder="Write your complaint" required></textarea>
+        <br><br>
+        <label>
+            <input type="checkbox" name="anonymous"> Hide my identity
+        </label>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a href="/admin_login">Admin Login</a>
+</body>
+</html>
